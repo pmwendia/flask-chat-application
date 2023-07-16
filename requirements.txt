@@ -3,7 +3,7 @@ bidict==0.21.2
 certifi==2020.12.5
 click==7.1.2
 cloudinary==1.24.0
-dnspython==2.4.0
+dnspython==2.3.0
 eventlet==0.33.3
 exceptiongroup==1.1.2
 Flask==1.1.2
