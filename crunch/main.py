@@ -8,8 +8,10 @@ from flask import Blueprint, render_template, session, redirect, request
 import cloudinary as Cloud
 from cloudinary import uploader
 from cloudinary.utils import cloudinary_url
+from flask_cors import CORS
 
 app = create_app()
+CORS(app, resources={r"/*": {"origins": "https://new-bie.onrender.com"}})
 
 socketio = SocketIO(app,logger=True, engineio_logger=True)
 

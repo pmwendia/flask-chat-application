@@ -4,7 +4,7 @@ from flask_login import UserMixin, LoginManager
 from werkzeug.security import generate_password_hash, check_password_hash
 import random
 import string
-
+from flask_cors import CORS
 import os
 # init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy()
@@ -91,6 +91,7 @@ def create_app():
     databasePath = os.path.join(current_direc, "db.sqlite")
     print(databasePath)
     app = Flask(__name__)
+    CORS(app, resources={r"/*": {"origins": "https://new-bie.onrender.com"}})
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'xyzxyz xyzxyz xyzxyz'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
