@@ -40,7 +40,7 @@ def uploadImage():
         c.channel_id = request.form.get('imagecid')
         c.image = 1
         room = Workspace.query.filter_by(id = request.form.get('imagewid')).first()
-        session['name'] = room.name
+        session['username'] = room.name
         if c.message and c.username and c.wid and c.channel_id:
             db.session.add(c)
             db.session.commit()

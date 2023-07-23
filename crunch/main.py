@@ -1,4 +1,4 @@
-from website import create_app,db,Workspace, User, Channel, Chats
+from src import create_app,db,Workspace, User, Channel, Chats
 from flask_socketio import SocketIO, send, emit, join_room
 from flask import session
 from flask_login import login_user, logout_user, login_required, current_user

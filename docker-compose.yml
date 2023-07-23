@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  src:
+    build:
+      context: ./crunch
+      dockerfile: Dockerfile
+    # entrypoint: /bin/bash
+    # command: -c "python main.py"
+      # target: builder
+    environment:
+      - FLASK_APP = main.py
+      - FLASK_ENV = development
+      - FLASK_DEBUG = 1
+      - DEBUG=True
+    stop_signal: SIGINT
+    volumes:  
+      - .:/crunch
+    ports:
+      - "5000:5000"
