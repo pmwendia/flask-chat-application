@@ -91,7 +91,7 @@ def create_app():
     databasePath = os.path.join(current_direc, "db.sqlite")
     print(databasePath)
     app = Flask(__name__)
-    CORS(app, resources={r"/*": {"origins": "https://new-bie.onrender.com"}})
+    # app = CORS(app, resources={r"/*": {"origins": "https://new-bie.onrender.com"}})
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'xyzxyz xyzxyz xyzxyz'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'

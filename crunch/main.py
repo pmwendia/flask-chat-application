@@ -13,7 +13,8 @@ from flask_cors import CORS
 app = create_app()
 CORS(app, resources={r"/*": {"origins": "https://new-bie.onrender.com"}})
 
-socketio = SocketIO(app,logger=True, engineio_logger=True)
+# socketio = SocketIO(app,logger=True, engineio_logger=True)
+socketio = SocketIO(app,logger=True, engineio_logger=True, cors_allowed_origins=['https://new-bie.onrender.com', 'http://127.0.0.1:5000', 'http://0.0.0.0:5000'])
 
 # Add your cloudinary credentials here!
 Cloud.config( 
